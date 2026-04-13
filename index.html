@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GogoSalon — Báo cáo hiệu quả ứng dụng AI</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+</head>
+<body>
+
+  <!-- Sticky Navigation -->
+  <nav id="main-nav" class="nav">
+    <div class="nav-inner">
+      <div class="nav-brand">GogoSalon &times; AI</div>
+      <div class="nav-links">
+        <a href="#hero" class="nav-link active">Tổng quan</a>
+        <a href="#overview" class="nav-link">Dự án</a>
+        <a href="#process" class="nav-link">Quy trình</a>
+        <a href="#before-after" class="nav-link">Before/After</a>
+        <a href="#results" class="nav-link">Kết quả</a>
+        <a href="#fe-be" class="nav-link">FE vs BE</a>
+        <a href="#roi" class="nav-link">ROI</a>
+        <a href="#task-detail" class="nav-link">Chi tiết</a>
+        <a href="#adoption" class="nav-link">Adoption</a>
+        <a href="#lessons" class="nav-link">Bài học</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Section 1: Hero + KPI Banner -->
+  <section id="hero" class="section-hero">
+    <div class="hero-content">
+      <h1 class="hero-title">Báo cáo hiệu quả ứng dụng AI</h1>
+      <p class="hero-subtitle">Dự án GogoSalon — Hệ thống quản lý salon</p>
+      <div class="kpi-row">
+        <div class="kpi-item">
+          <span class="kpi-number" data-target="56" data-suffix="%">0%</span>
+          <span class="kpi-label">Effort tiết kiệm</span>
+        </div>
+        <div class="kpi-item">
+          <span class="kpi-number" data-target="22" data-suffix="">0</span>
+          <span class="kpi-label">Tasks tracked</span>
+        </div>
+        <div class="kpi-item">
+          <span class="kpi-number" data-target="2.06" data-suffix=" MM" data-decimals="2">0 MM</span>
+          <span class="kpi-label">Man-month tiết kiệm</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: Tổng quan dự án -->
+  <section id="overview" class="section fade-in">
+    <div class="container">
+      <h2 class="section-title">Tổng quan dự án</h2>
+      <div class="two-col">
+        <div class="col">
+          <h3>Mô tả dự án</h3>
+          <p>GogoSalon là hệ thống quản lý và hệ thống hoá quy trình đặt lịch, quản lý appointments, tickets và technicians của một salon. Hệ thống gồm:</p>
+          <ul>
+            <li><strong>Online Booking</strong> — Cổng đặt lịch cho người dùng cuối, hỗ trợ đặt lịch nhóm (Party Appointment), chọn technician hoặc first available</li>
+            <li><strong>Frontdesk</strong> — Trang quản lý chính cho receptionist: Schedule, Tickets, Technician queues, Settings</li>
+            <li><strong>Tích hợp SMS</strong> — Tự động gửi tin nhắn xác nhận và link quản lý lịch hẹn</li>
+          </ul>
+        </div>
+        <div class="col">
+          <h3>Team &amp; Effort</h3>
+          <div class="stat-grid">
+            <div class="stat-card">
+              <span class="stat-number">17.62</span>
+              <span class="stat-label">Tổng MM</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number">6</span>
+              <span class="stat-label">Thành viên</span>
+            </div>
+          </div>
+          <p class="team-breakdown">2 FE Dev, 2 BE Dev, 1 QC, 1 BA (25% effort)</p>
+          <h3>Lợi thế dự án</h3>
+          <ul>
+            <li>Tài liệu chuẩn hoá, chi tiết — tốt cho AI code</li>
+            <li>Feedback loop và communication ổn định, minh bạch</li>
+            <li>Bộ Acceptance Criteria chi tiết, tách nhỏ — dễ verify đầu ra</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: Quy trình áp dụng AI -->
+  <section id="process" class="section section-alt fade-in">
+    <div class="container">
+      <h2 class="section-title">Quy trình áp dụng AI</h2>
+      <div class="flow-diagram">
+        <div class="flow-step">
+          <div class="flow-icon">1</div>
+          <div class="flow-text">Phân tích<br>tài liệu</div>
+        </div>
+        <div class="flow-arrow">&rarr;</div>
+        <div class="flow-step">
+          <div class="flow-icon">2</div>
+          <div class="flow-text">Tạo plan<br>code</div>
+        </div>
+        <div class="flow-arrow">&rarr;</div>
+        <div class="flow-step">
+          <div class="flow-icon">3</div>
+          <div class="flow-text">TDD<br>coding</div>
+        </div>
+        <div class="flow-arrow">&rarr;</div>
+        <div class="flow-step">
+          <div class="flow-icon">4</div>
+          <div class="flow-text">AI verify<br>&amp; review</div>
+        </div>
+        <div class="flow-arrow">&rarr;</div>
+        <div class="flow-step">
+          <div class="flow-icon">5</div>
+          <div class="flow-text">Dev review<br>cuối cùng</div>
+        </div>
+      </div>
+      <div class="golden-rule">
+        <strong>Quy tắc vàng:</strong> AI và Dev trao đổi như 2 developer với nhau. AI luôn luôn phải hỏi ngược lại dev ở mọi đầu việc để hiểu hơn về yêu cầu và giảm thiểu hallucination. Dev luôn là người review kỹ lưỡng cuối cùng.
+      </div>
+      <h3>Công cụ AI sử dụng</h3>
+      <div class="two-col">
+        <div class="col">
+          <div class="tool-card">
+            <h4>Phía MOR (Development Team)</h4>
+            <p><strong>Claude Code</strong> — Sử dụng bởi cả FE và BE dev cho toàn bộ quy trình: phân tích tài liệu, plan, TDD, verify, viết documentation.</p>
+          </div>
+        </div>
+        <div class="col">
+          <div class="tool-card">
+            <h4>Phía Khách hàng</h4>
+            <p><strong>Kilo Code</strong> — Review code (semantics, syntax, TS, logic). Trung bình phát hiện ~4 errors/PR.</p>
+            <p><strong>GitHub Copilot</strong> — Fix bug từ phía khách.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: So sánh Before / After -->
+  <section id="before-after" class="section fade-in">
+    <div class="container">
+      <h2 class="section-title">So sánh Before / After</h2>
+      <div class="two-col">
+        <div class="col">
+          <div class="compare-card compare-before">
+            <h3>Quy trình truyền thống</h3>
+            <div class="placeholder-content">
+              <p class="placeholder-tag">[Placeholder — Sẽ bổ sung sau]</p>
+              <ul>
+                <li>BA viết spec &rarr; Dev đọc &rarr; Code thủ công</li>
+                <li>Manual testing &rarr; Review &rarr; Fix</li>
+                <li>Timeline dài hơn, nhiều vòng lặp sửa lỗi</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="compare-card compare-after">
+            <h3>Quy trình có AI</h3>
+            <ul>
+              <li>AI phân tích tài liệu &rarr; Tự tạo plan chi tiết</li>
+              <li>TDD coding với AI &rarr; AI tự verify</li>
+              <li>Dev review cuối &rarr; Deploy nhanh hơn</li>
+              <li>AI viết documentation tự động</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: Kết quả tổng hợp -->
+  <section id="results" class="section section-alt fade-in">
+    <div class="container">
+      <h2 class="section-title">Kết quả tổng hợp</h2>
+      <div class="two-col">
+        <div class="col">
+          <div class="chart-card">
+            <h3>So sánh Effort tổng thể</h3>
+            <canvas id="chart-effort-bar"></canvas>
+          </div>
+        </div>
+        <div class="col">
+          <div class="chart-card">
+            <h3>Effort tích luỹ theo task</h3>
+            <canvas id="chart-cumulative-line"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 6: FE vs BE Breakdown -->
+  <section id="fe-be" class="section fade-in">
+    <div class="container">
+      <h2 class="section-title">So sánh hiệu quả: Frontend vs Backend</h2>
+      <div class="two-col">
+        <div class="col">
+          <div class="chart-card">
+            <h3>Effort tiết kiệm theo vai trò</h3>
+            <canvas id="chart-fe-be-stacked"></canvas>
+          </div>
+        </div>
+        <div class="col">
+          <div class="fe-be-summary">
+            <div class="fe-be-card">
+              <h4>Frontend</h4>
+              <div class="fe-be-stats">
+                <span class="fe-be-value">39.25 MD</span>
+                <span class="fe-be-arrow">&rarr;</span>
+                <span class="fe-be-value fe-be-value-green">16.35 MD</span>
+              </div>
+              <span class="fe-be-pct badge badge-green">-58% effort</span>
+            </div>
+            <div class="fe-be-card">
+              <h4>Backend</h4>
+              <div class="fe-be-stats">
+                <span class="fe-be-value">34.0 MD</span>
+                <span class="fe-be-arrow">&rarr;</span>
+                <span class="fe-be-value fe-be-value-green">15.75 MD</span>
+              </div>
+              <span class="fe-be-pct badge badge-green">-54% effort</span>
+            </div>
+            <div class="insight-callout">
+              <strong>Nhận xét:</strong> AI hiệu quả gần tương đương cho cả FE (58%) và BE (54%). FE có lợi thế nhờ nhiều task lặp lại (UI component fixes), BE có lợi thế ở task tạo microservice mới.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 7: ROI Summary -->
+  <section id="roi" class="section section-alt fade-in">
+    <div class="container">
+      <h2 class="section-title">ROI — Hiệu quả đầu tư AI</h2>
+      <div class="roi-grid">
+        <div class="roi-card">
+          <span class="roi-number" data-target="2.06" data-suffix=" MM" data-decimals="2">0 MM</span>
+          <span class="roi-label">Man-month tiết kiệm</span>
+          <span class="roi-sub">từ 3.66 MM xuống 1.61 MM</span>
+        </div>
+        <div class="roi-card">
+          <span class="roi-number" data-target="56" data-suffix="%">0%</span>
+          <span class="roi-label">Effort giảm trung bình</span>
+          <span class="roi-sub">trên toàn bộ 22 tasks tracked</span>
+        </div>
+        <div class="roi-card">
+          <span class="roi-number" data-target="30" data-suffix="%" data-prefix="~">0%</span>
+          <span class="roi-label">Task do AI code hoàn toàn</span>
+          <span class="roi-sub">dev chỉ review và approve</span>
+        </div>
+        <div class="roi-card">
+          <span class="roi-number" data-target="36.15" data-suffix=" MD" data-decimals="2">0 MD</span>
+          <span class="roi-label">Tổng man-days tiết kiệm</span>
+          <span class="roi-sub">tương đương ~1.7 tháng làm việc</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 8: Chi tiết từng Task -->
+  <section id="task-detail" class="section fade-in">
+    <div class="container">
+      <h2 class="section-title">Chi tiết từng Task</h2>
+
+      <h3 class="group-heading">Phát triển tính năng</h3>
+      <div id="accordion-features" class="accordion"></div>
+
+      <h3 class="group-heading">Fix UAT Bug</h3>
+      <div id="accordion-bugs" class="accordion"></div>
+    </div>
+  </section>
+
+  <!-- Section 9: Tỷ lệ áp dụng AI -->
+  <section id="adoption" class="section section-alt fade-in">
+    <div class="container">
+      <h2 class="section-title">Tỷ lệ áp dụng AI</h2>
+      <div class="two-col">
+        <div class="col">
+          <div class="chart-card">
+            <h3>Task dùng AI vs Không</h3>
+            <canvas id="chart-adoption-doughnut"></canvas>
+          </div>
+        </div>
+        <div class="col">
+          <div class="chart-card">
+            <h3>Lý do không sử dụng AI</h3>
+            <div id="reasons-list" class="reasons-list"></div>
+            <div class="insight-callout">
+              <strong>Nhận xét:</strong> <span id="adoption-insight"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 10: Bài học kinh nghiệm -->
+  <section id="lessons" class="section fade-in">
+    <div class="container">
+      <h2 class="section-title">Bài học kinh nghiệm</h2>
+      <div class="lesson-grid">
+        <div class="lesson-card">
+          <div class="lesson-icon">&#128218;</div>
+          <h4>Tài liệu chuẩn hóa = nền tảng AI</h4>
+          <p>AC chi tiết và tài liệu rõ ràng giúp AI hiểu đúng yêu cầu, giảm hallucination. GogoSalon có lợi thế nhờ tài liệu đã được chuẩn hóa.</p>
+        </div>
+        <div class="lesson-card">
+          <div class="lesson-icon">&#128260;</div>
+          <h4>AI xuất sắc ở task lặp lại</h4>
+          <p>Fix 20+ components, refactor printing logic, splitting logic — các task lặp lại đạt 70-85% savings. AI mạnh nhất khi pattern rõ ràng.</p>
+        </div>
+        <div class="lesson-card">
+          <div class="lesson-icon">&#128065;</div>
+          <h4>AI yếu khi cần verify UI</h4>
+          <p>Một số task chỉ đạt 20-30% savings vì dev phải kiểm tra UI bằng mắt. AI không thấy được giao diện thực tế.</p>
+        </div>
+        <div class="lesson-card">
+          <div class="lesson-icon">&#128172;</div>
+          <h4>Trao đổi 2 chiều là chìa khóa</h4>
+          <p>Tasks có "trao đổi qua lại" cho kết quả tốt hơn. AI cần được hỏi ngược để hiểu context và giảm thiểu sai sót.</p>
+        </div>
+        <div class="lesson-card">
+          <div class="lesson-icon">&#128270;</div>
+          <h4>AI phát hiện bug ẩn</h4>
+          <p>Không chỉ fix bug được assign, AI còn phát hiện bug có sẵn của hệ thống và fix miễn phí cho khách — tạo giá trị vượt mong đợi.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>GogoSalon AI Case Study &mdash; MOR Software</p>
+  </footer>
+
+  <script src="js/task-data.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/interactions.js"></script>
+  <script src="js/charts.js"></script>
+</body>
+</html>
