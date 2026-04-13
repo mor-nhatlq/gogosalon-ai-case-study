@@ -31,20 +31,28 @@
   <!-- Section 1: Hero + KPI Banner -->
   <section id="hero" class="section-hero">
     <div class="hero-content">
-      <h1 class="hero-title">Báo cáo hiệu quả ứng dụng AI</h1>
-      <p class="hero-subtitle">Dự án GogoSalon — Hệ thống quản lý salon</p>
+      <h1 class="hero-title">Báo cáo hiệu quả ứng dụng AI<br>trong dự án GogoSalon</h1>
+      <!-- <p class="hero-subtitle">Dự án GogoSalon — Hệ thống quản lý salon</p> -->
       <div class="kpi-row">
-        <div class="kpi-item">
+        <div class="kpi-item kpi-item-1">
+          <span class="kpi-icon">&#128202;</span>
+          <span class="kpi-number" data-target="47" data-suffix="%">0%</span>
+          <span class="kpi-label">Tỷ lệ task áp dụng AI</span>
+        </div>
+        <div class="kpi-item kpi-item-2">
+          <span class="kpi-icon">&#9889;</span>
           <span class="kpi-number" data-target="56" data-suffix="%">0%</span>
-          <span class="kpi-label">Effort tiết kiệm</span>
+          <span class="kpi-label">Effort đã tiết kiệm với những task sử dụng AI</span>
         </div>
-        <div class="kpi-item">
+        <div class="kpi-item kpi-item-3">
+          <span class="kpi-icon">&#128203;</span>
           <span class="kpi-number" data-target="22" data-suffix="">0</span>
-          <span class="kpi-label">Tasks tracked</span>
+          <span class="kpi-label">Tasks đã sử dụng AI (kèm UAT Bug)</span>
         </div>
-        <div class="kpi-item">
+        <div class="kpi-item kpi-item-4">
+          <span class="kpi-icon">&#9201;&#65039;</span>
           <span class="kpi-number" data-target="2.06" data-suffix=" MM" data-decimals="2">0 MM</span>
-          <span class="kpi-label">Man-month tiết kiệm</span>
+          <span class="kpi-label">Man-month đã tiết kiệm</span>
         </div>
       </div>
     </div>
@@ -61,6 +69,7 @@
           <ul>
             <li><strong>Online Booking</strong> — Cổng đặt lịch cho người dùng cuối, hỗ trợ đặt lịch nhóm (Party Appointment), chọn technician hoặc first available</li>
             <li><strong>Frontdesk</strong> — Trang quản lý chính cho receptionist: Schedule, Tickets, Technician queues, Settings</li>
+            <li><strong>Self-Checkin</strong> — Cổng checkin tại salon trên tablet. Khách nhập SĐT: nếu đã có appointment đặt qua Online Booking thì hiển thị lịch và checkin; nếu chưa có thì tạo lịch ngay tại salon để làm dịch vụ</li>
             <li><strong>Tích hợp SMS</strong> — Tự động gửi tin nhắn xác nhận và link quản lý lịch hẹn</li>
           </ul>
         </div>
@@ -92,34 +101,39 @@
   <section id="process" class="section section-alt fade-in">
     <div class="container">
       <h2 class="section-title">Quy trình áp dụng AI</h2>
+      <div class="golden-rule">
+        <strong>Quy tắc vàng:</strong> AI và Dev trao đổi như 2 developer với nhau. AI luôn luôn phải hỏi ngược lại dev ở mọi đầu việc để hiểu hơn về yêu cầu và giảm thiểu hallucination. Dev luôn là người review kỹ lưỡng cuối cùng.
+      </div>
       <div class="flow-diagram">
-        <div class="flow-step">
-          <div class="flow-icon">1</div>
+        <div class="flow-step flow-step-1">
+          <div class="flow-icon">&#128218;</div>
+          <div class="flow-number">Bước 1</div>
           <div class="flow-text">Phân tích<br>tài liệu</div>
         </div>
         <div class="flow-arrow">&rarr;</div>
-        <div class="flow-step">
-          <div class="flow-icon">2</div>
+        <div class="flow-step flow-step-2">
+          <div class="flow-icon">&#128221;</div>
+          <div class="flow-number">Bước 2</div>
           <div class="flow-text">Tạo plan<br>code</div>
         </div>
         <div class="flow-arrow">&rarr;</div>
-        <div class="flow-step">
-          <div class="flow-icon">3</div>
+        <div class="flow-step flow-step-3">
+          <div class="flow-icon">&#9881;&#65039;</div>
+          <div class="flow-number">Bước 3</div>
           <div class="flow-text">TDD<br>coding</div>
         </div>
         <div class="flow-arrow">&rarr;</div>
-        <div class="flow-step">
-          <div class="flow-icon">4</div>
+        <div class="flow-step flow-step-4">
+          <div class="flow-icon">&#128269;</div>
+          <div class="flow-number">Bước 4</div>
           <div class="flow-text">AI verify<br>&amp; review</div>
         </div>
         <div class="flow-arrow">&rarr;</div>
-        <div class="flow-step">
-          <div class="flow-icon">5</div>
+        <div class="flow-step flow-step-5">
+          <div class="flow-icon">&#9989;</div>
+          <div class="flow-number">Bước 5</div>
           <div class="flow-text">Dev review<br>cuối cùng</div>
         </div>
-      </div>
-      <div class="golden-rule">
-        <strong>Quy tắc vàng:</strong> AI và Dev trao đổi như 2 developer với nhau. AI luôn luôn phải hỏi ngược lại dev ở mọi đầu việc để hiểu hơn về yêu cầu và giảm thiểu hallucination. Dev luôn là người review kỹ lưỡng cuối cùng.
       </div>
       <h3>Công cụ AI sử dụng</h3>
       <div class="two-col">
@@ -148,25 +162,57 @@
         <div class="col">
           <div class="compare-card compare-before">
             <h3>Quy trình truyền thống</h3>
-            <div class="placeholder-content">
-              <p class="placeholder-tag">[Placeholder — Sẽ bổ sung sau]</p>
-              <ul>
-                <li>BA viết spec &rarr; Dev đọc &rarr; Code thủ công</li>
-                <li>Manual testing &rarr; Review &rarr; Fix</li>
-                <li>Timeline dài hơn, nhiều vòng lặp sửa lỗi</li>
-              </ul>
-            </div>
+            <ol class="process-steps">
+              <li class="process-step">
+                <div class="process-step-title">Khách gửi tài liệu đã viết sẵn &rarr; BA và QC đọc tài liệu để viết AC và Test case</div>
+                <div class="process-step-drawback">
+                  <span class="drawback-label">Nhược điểm:</span>
+                  Tốn thời gian phân tích nghiệp vụ, tìm hiểu hệ thống và phát hiện gap để confirm và QnA
+                </div>
+              </li>
+              <li class="process-step">
+                <div class="process-step-title">Dev sử dụng tài liệu khách gửi + bộ AC + QnA để làm task</div>
+                <div class="process-step-drawback">
+                  <span class="drawback-label">Nhược điểm:</span>
+                  Quá nhiều nguồn thông tin &rarr; Có thể miss thông tin khi code
+                </div>
+              </li>
+              <li class="process-step">
+                <div class="process-step-title">Thời gian code: code chay hoặc vibe coding</div>
+                <div class="process-step-drawback">
+                  <span class="drawback-label">Nhược điểm:</span>
+                  Tốn thời gian và chất lượng không đảm bảo, do vibe coding không có nhiều context của dự án và tài liệu
+                </div>
+              </li>
+            </ol>
           </div>
         </div>
         <div class="col">
           <div class="compare-card compare-after">
             <h3>Quy trình có AI</h3>
-            <ul>
-              <li>AI phân tích tài liệu &rarr; Tự tạo plan chi tiết</li>
-              <li>TDD coding với AI &rarr; AI tự verify</li>
-              <li>Dev review cuối &rarr; Deploy nhanh hơn</li>
-              <li>AI viết documentation tự động</li>
-            </ul>
+            <ol class="process-steps process-steps-after">
+              <li class="process-step">
+                <div class="process-step-title">AI phân tích tài liệu khách gửi &rarr; quy trình hoá và phát hiện gap của hệ thống. Dev/team là người giao tiếp với khách hàng để confirm các gap đó</div>
+                <div class="process-step-advantage">
+                  <span class="advantage-label">Ưu điểm:</span>
+                  Tiết kiệm thời gian đọc và phân tích nghiệp vụ. AI chủ động phát hiện gap mà người đọc dễ bỏ qua, giúp dev tập trung vào việc trao đổi nghiệp vụ với khách thay vì rà soát tài liệu
+                </div>
+              </li>
+              <li class="process-step">
+                <div class="process-step-title">Dev review cuối với gate bắt buộc &rarr; trao đổi và xử lý các gap mà AI đề ra để tích hợp/hoàn thiện hơn</div>
+                <div class="process-step-advantage">
+                  <span class="advantage-label">Ưu điểm:</span>
+                  Luôn có dev làm gatekeeper cuối đảm bảo chất lượng. Tận dụng thông tin từ AI để cải thiện sản phẩm thay vì chỉ deploy nhanh, giảm rủi ro hallucination
+                </div>
+              </li>
+              <li class="process-step">
+                <div class="process-step-title">AI viết documentation tự động khi cần (VD: SMS update vào Wiki, Deployment guideline). Luôn có gate user review và AI trả feedback về gap</div>
+                <div class="process-step-advantage">
+                  <span class="advantage-label">Ưu điểm:</span>
+                  Tự động hoá phần văn bản tốn thời gian, đảm bảo wiki luôn được cập nhật. AI chủ động báo gap khiến doc đầy đủ hơn so với viết tay
+                </div>
+              </li>
+            </ol>
           </div>
         </div>
       </div>

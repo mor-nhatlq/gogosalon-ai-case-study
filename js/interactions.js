@@ -89,7 +89,7 @@
       '</div>' +
       '<div class="accordion-body">' +
         '<div class="accordion-body-inner">' +
-          '<div class="metric-grid">' +
+          '<div class="metric-grid metric-grid-4">' +
             '<div class="metric-card">' +
               '<span class="metric-value metric-value-blue">' + task.effortTotal.withoutAI.toFixed(1) + ' MD</span>' +
               '<span class="metric-label">Không AI</span>' +
@@ -101,6 +101,10 @@
             '<div class="metric-card">' +
               '<span class="metric-value metric-value-red">' + saved.toFixed(1) + ' MD</span>' +
               '<span class="metric-label">Tiết kiệm</span>' +
+            '</div>' +
+            '<div class="metric-card">' +
+              '<span class="metric-value metric-value-orange">-' + pctLabel + '</span>' +
+              '<span class="metric-label">% chênh lệch</span>' +
             '</div>' +
           '</div>' +
           '<div class="detail-text">' +
