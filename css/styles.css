@@ -180,6 +180,7 @@ li { margin-bottom: 0.35rem; }
   font-weight: 500;
 }
 
+
 /* --- Stat Cards --- */
 .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
 
@@ -387,6 +388,140 @@ li { margin-bottom: 0.35rem; }
   font-weight: 700;
   color: #16a34a;
   margin-right: 0.3rem;
+}
+
+/* ---- Before/After Mapping Diagram ---- */
+.mapping-header {
+  display: grid;
+  grid-template-columns: 1fr 80px 1fr;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+  align-items: center;
+}
+
+.mapping-header-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.mapping-header-before {
+  background: #fef2f2;
+  color: #dc2626;
+  border: 2px solid #fecaca;
+}
+
+.mapping-header-after {
+  background: #f0fdf4;
+  color: #16a34a;
+  border: 2px solid #bbf7d0;
+}
+
+.mapping-header-icon { font-size: 1.25rem; }
+
+.mapping-diagram {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.mapping-row {
+  display: grid;
+  grid-template-columns: 1fr 80px 1fr;
+  gap: 1rem;
+  align-items: stretch;
+}
+
+.mapping-card {
+  position: relative;
+  padding: 1rem 1rem 1rem 2.5rem;
+  background: #fff;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.mapping-card-before { border-color: #fecaca; background: #fffbfb; }
+.mapping-card-after { border-color: #bbf7d0; background: #f7fef9; }
+
+.mapping-step-badge {
+  position: absolute;
+  left: 0.65rem;
+  top: 1rem;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.mapping-step-badge-before { background: #dc2626; }
+.mapping-step-badge-after { background: #16a34a; }
+
+.mapping-step-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+  line-height: 1.45;
+}
+
+.mapping-arrow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  position: relative;
+}
+
+.mapping-arrow-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.mapping-arrow-icon {
+  font-size: 2rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #dc2626 0%, #16a34a 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: mapping-arrow-pulse 2s ease-in-out infinite;
+}
+
+@keyframes mapping-arrow-pulse {
+  0%, 100% { transform: translateX(0); opacity: 0.7; }
+  50% { transform: translateX(4px); opacity: 1; }
+}
+
+/* Tablet: stack mapping vertically */
+@media (max-width: 768px) {
+  .mapping-header,
+  .mapping-row {
+    grid-template-columns: 1fr;
+  }
+  .mapping-arrow { padding: 0.5rem 0; }
+  .mapping-arrow-icon {
+    animation: mapping-arrow-pulse-vertical 2s ease-in-out infinite;
+  }
+  @keyframes mapping-arrow-pulse-vertical {
+    0%, 100% { transform: rotate(90deg) translateX(0); opacity: 0.7; }
+    50% { transform: rotate(90deg) translateX(4px); opacity: 1; }
+  }
 }
 
 /* --- Chart Cards --- */
@@ -618,10 +753,17 @@ li { margin-bottom: 0.35rem; }
 /* --- Tablet Responsive --- */
 @media (max-width: 768px) {
   .two-col { grid-template-columns: 1fr; }
-  .kpi-row { flex-direction: column; gap: 1.5rem; }
+  .kpi-row { flex-direction: column; align-items: center; gap: 1.25rem; }
+  .kpi-item { width: 100%; max-width: 320px; }
   .kpi-number { font-size: 2.25rem; }
   .flow-diagram { flex-direction: column; }
-  .flow-arrow { transform: rotate(90deg); }
+  .flow-arrow {
+    animation: flow-pulse-vertical 2s ease-in-out infinite;
+  }
+  @keyframes flow-pulse-vertical {
+    0%, 100% { opacity: 0.4; transform: rotate(90deg) translateX(0); }
+    50% { opacity: 1; transform: rotate(90deg) translateX(3px); }
+  }
   .lesson-grid { grid-template-columns: 1fr; }
   .metric-grid { grid-template-columns: 1fr 1fr; }
   .metric-grid-4 { grid-template-columns: 1fr 1fr; }

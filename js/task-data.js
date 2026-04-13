@@ -355,8 +355,8 @@ const ADOPTION = {
   usingAI: 14,
   notUsingAI: 16,
   reasons: [
-    { reason: "Không cần thiết (task đơn giản)", count: 2 },
-    { reason: "Dev chưa quen sử dụng AI", count: 1 },
-    { reason: "Không ghi nhận lý do cụ thể", count: 13 }
+    { reason: "Task đơn giản (Sửa UI đơn giản)", count: 12 },
+    { reason: "Task phức tạp, áp AI không hiệu quả", count: 3 },
+    { reason: "Không ghi nhận lý do cụ thể", count: 1 }
   ]
 };

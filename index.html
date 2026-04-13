@@ -55,6 +55,7 @@
           <span class="kpi-label">Man-month đã tiết kiệm</span>
         </div>
       </div>
+
     </div>
   </section>
 
@@ -158,61 +159,113 @@
   <section id="before-after" class="section fade-in">
     <div class="container">
       <h2 class="section-title">So sánh Before / After</h2>
-      <div class="two-col">
-        <div class="col">
-          <div class="compare-card compare-before">
-            <h3>Quy trình truyền thống</h3>
-            <ol class="process-steps">
-              <li class="process-step">
-                <div class="process-step-title">Khách gửi tài liệu đã viết sẵn &rarr; BA và QC đọc tài liệu để viết AC và Test case</div>
-                <div class="process-step-drawback">
-                  <span class="drawback-label">Nhược điểm:</span>
-                  Tốn thời gian phân tích nghiệp vụ, tìm hiểu hệ thống và phát hiện gap để confirm và QnA
-                </div>
-              </li>
-              <li class="process-step">
-                <div class="process-step-title">Dev sử dụng tài liệu khách gửi + bộ AC + QnA để làm task</div>
-                <div class="process-step-drawback">
-                  <span class="drawback-label">Nhược điểm:</span>
-                  Quá nhiều nguồn thông tin &rarr; Có thể miss thông tin khi code
-                </div>
-              </li>
-              <li class="process-step">
-                <div class="process-step-title">Thời gian code: code chay hoặc vibe coding</div>
-                <div class="process-step-drawback">
-                  <span class="drawback-label">Nhược điểm:</span>
-                  Tốn thời gian và chất lượng không đảm bảo, do vibe coding không có nhiều context của dự án và tài liệu
-                </div>
-              </li>
-            </ol>
+
+      <div class="mapping-header">
+        <div class="mapping-header-item mapping-header-before">
+          <span class="mapping-header-icon">&#128683;</span>
+          <span>Quy trình truyền thống</span>
+        </div>
+        <div class="mapping-header-spacer"></div>
+        <div class="mapping-header-item mapping-header-after">
+          <span class="mapping-header-icon">&#9989;</span>
+          <span>Quy trình có AI</span>
+        </div>
+      </div>
+
+      <div class="mapping-diagram">
+        <!-- Mapping 1: Phân tích tài liệu -->
+        <div class="mapping-row">
+          <div class="mapping-card mapping-card-before">
+            <span class="mapping-step-badge mapping-step-badge-before">1</span>
+            <div class="mapping-step-title">Phân tích tài liệu — Khách gửi tài liệu &rarr; BA/QC đọc để viết AC và Test case</div>
+            <div class="process-step-drawback">
+              <span class="drawback-label">Nhược điểm:</span>
+              Tốn thời gian phân tích nghiệp vụ, tìm hiểu hệ thống và phát hiện gap để confirm và QnA
+            </div>
+          </div>
+          <div class="mapping-arrow">
+            <span class="mapping-arrow-label">Thay bằng</span>
+            <span class="mapping-arrow-icon">&#8658;</span>
+          </div>
+          <div class="mapping-card mapping-card-after">
+            <span class="mapping-step-badge mapping-step-badge-after">1</span>
+            <div class="mapping-step-title">Phân tích tài liệu — AI quy trình hoá tài liệu và phát hiện gap; dev/team confirm nghiệp vụ với khách</div>
+            <div class="process-step-advantage">
+              <span class="advantage-label">Ưu điểm:</span>
+              Tiết kiệm thời gian phân tích. AI chủ động phát hiện gap mà người đọc dễ bỏ qua, dev tập trung trao đổi nghiệp vụ thay vì rà soát tài liệu
+            </div>
           </div>
         </div>
-        <div class="col">
-          <div class="compare-card compare-after">
-            <h3>Quy trình có AI</h3>
-            <ol class="process-steps process-steps-after">
-              <li class="process-step">
-                <div class="process-step-title">AI phân tích tài liệu khách gửi &rarr; quy trình hoá và phát hiện gap của hệ thống. Dev/team là người giao tiếp với khách hàng để confirm các gap đó</div>
-                <div class="process-step-advantage">
-                  <span class="advantage-label">Ưu điểm:</span>
-                  Tiết kiệm thời gian đọc và phân tích nghiệp vụ. AI chủ động phát hiện gap mà người đọc dễ bỏ qua, giúp dev tập trung vào việc trao đổi nghiệp vụ với khách thay vì rà soát tài liệu
-                </div>
-              </li>
-              <li class="process-step">
-                <div class="process-step-title">Dev review cuối với gate bắt buộc &rarr; trao đổi và xử lý các gap mà AI đề ra để tích hợp/hoàn thiện hơn</div>
-                <div class="process-step-advantage">
-                  <span class="advantage-label">Ưu điểm:</span>
-                  Luôn có dev làm gatekeeper cuối đảm bảo chất lượng. Tận dụng thông tin từ AI để cải thiện sản phẩm thay vì chỉ deploy nhanh, giảm rủi ro hallucination
-                </div>
-              </li>
-              <li class="process-step">
-                <div class="process-step-title">AI viết documentation tự động khi cần (VD: SMS update vào Wiki, Deployment guideline). Luôn có gate user review và AI trả feedback về gap</div>
-                <div class="process-step-advantage">
-                  <span class="advantage-label">Ưu điểm:</span>
-                  Tự động hoá phần văn bản tốn thời gian, đảm bảo wiki luôn được cập nhật. AI chủ động báo gap khiến doc đầy đủ hơn so với viết tay
-                </div>
-              </li>
-            </ol>
+
+        <!-- Mapping 2: Implement / Coding -->
+        <div class="mapping-row">
+          <div class="mapping-card mapping-card-before">
+            <span class="mapping-step-badge mapping-step-badge-before">2</span>
+            <div class="mapping-step-title">Implement &amp; Coding — Dev juggle nhiều nguồn (tài liệu + AC + QnA), code chay hoặc vibe coding</div>
+            <div class="process-step-drawback">
+              <span class="drawback-label">Nhược điểm:</span>
+              Quá nhiều nguồn thông tin dễ miss khi code; vibe coding không có nhiều context dự án &rarr; chậm và chất lượng không đảm bảo
+            </div>
+          </div>
+          <div class="mapping-arrow">
+            <span class="mapping-arrow-label">Thay bằng</span>
+            <span class="mapping-arrow-icon">&#8658;</span>
+          </div>
+          <div class="mapping-card mapping-card-after">
+            <span class="mapping-step-badge mapping-step-badge-after">2</span>
+            <div class="mapping-step-title">Implement &amp; Coding — Dev pair coding cùng AI với context đã tổng hợp từ bước 1; AI đề xuất plan, dev hướng dẫn AI implement theo TDD</div>
+            <div class="process-step-advantage">
+              <span class="advantage-label">Ưu điểm:</span>
+              Thông tin được AI tổng hợp, dev không phải qua lại nhiều nguồn. AI có full context dự án nên code nhanh, chất lượng cao và bám sát yêu cầu
+            </div>
+          </div>
+        </div>
+
+        <!-- Mapping 3: Verify & Deliver -->
+        <div class="mapping-row">
+          <div class="mapping-card mapping-card-before">
+            <span class="mapping-step-badge mapping-step-badge-before">3</span>
+            <div class="mapping-step-title">Verify &amp; Deliver — Manual review code, doc viết tay sau khi deliver</div>
+            <div class="process-step-drawback">
+              <span class="drawback-label">Nhược điểm:</span>
+              Review thủ công tốn nhiều thời gian, dễ miss thông tin; doc viết tay tốn thời gian, thường thiếu sót và không chuẩn hoá theo tài liệu trước đó của khách.
+            </div>
+          </div>
+          <div class="mapping-arrow">
+            <span class="mapping-arrow-label">Thay bằng</span>
+            <span class="mapping-arrow-icon">&#8658;</span>
+          </div>
+          <div class="mapping-card mapping-card-after">
+            <span class="mapping-step-badge mapping-step-badge-after">3</span>
+            <div class="mapping-step-title">Verify &amp; Deliver — Dev bắt buộc xử lý gap mà AI đề ra, hoặc trao đổi với AI để tìm giải pháp; AI tự viết doc khi cần (SMS wiki, Deployment guideline)</div>
+            <div class="process-step-advantage">
+              <span class="advantage-label">Ưu điểm:</span>
+              Luôn yêu cầu dev review để đảm bảo chất lượng; tận dụng thông tin từ AI để hoàn thiện. Doc tự động hoá, wiki luôn cập nhật, AI chủ động báo gap
+            </div>
+          </div>
+        </div>
+
+        <!-- Mapping 4: Fix bug / UAT bug -->
+        <div class="mapping-row">
+          <div class="mapping-card mapping-card-before">
+            <span class="mapping-step-badge mapping-step-badge-before">4</span>
+            <div class="mapping-step-title">Fix bug &amp; UAT bug — Khách trả UAT bug, dev đọc code và fix bằng tay</div>
+            <div class="process-step-drawback">
+              <span class="drawback-label">Nhược điểm:</span>
+              Tốn thời gian debug, 1 bug có thể mất nguyên ngày để tìm ra root cause, đặc biệt với codebase phức tạp hoặc bug ở edge case hiếm gặp
+            </div>
+          </div>
+          <div class="mapping-arrow">
+            <span class="mapping-arrow-label">Thay bằng</span>
+            <span class="mapping-arrow-icon">&#8658;</span>
+          </div>
+          <div class="mapping-card mapping-card-after">
+            <span class="mapping-step-badge mapping-step-badge-after">4</span>
+            <div class="mapping-step-title">Fix bug &amp; UAT bug — AI tự tìm hiểu codebase, phân tích git history và lấy Root Cause, đề xuất giải pháp; dev verify và áp dụng fix</div>
+            <div class="process-step-advantage">
+              <span class="advantage-label">Ưu điểm:</span>
+              Đẩy nhanh RCA và debug đáng kể. Dữ liệu thực tế: trung bình tiết kiệm <strong>~69% effort/bug</strong>, tổng tiết kiệm <strong>13.65 MD</strong> trên 16 UAT bugs (từ 19.75 MD xuống 6.1 MD)
+            </div>
           </div>
         </div>
       </div>
@@ -293,7 +346,7 @@
         <div class="roi-card">
           <span class="roi-number" data-target="56" data-suffix="%">0%</span>
           <span class="roi-label">Effort giảm trung bình</span>
-          <span class="roi-sub">trên toàn bộ 22 tasks tracked</span>
+          <span class="roi-sub">trên toàn bộ 22 tasks được theo dõi</span>
         </div>
         <div class="roi-card">
           <span class="roi-number" data-target="30" data-suffix="%" data-prefix="~">0%</span>
@@ -329,7 +382,7 @@
       <div class="two-col">
         <div class="col">
           <div class="chart-card">
-            <h3>Task dùng AI vs Không</h3>
+            <h3>Task dùng AI vs Không dùng AI</h3>
             <canvas id="chart-adoption-doughnut"></canvas>
           </div>
         </div>
